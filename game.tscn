@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://u13vwny0o42y"]
+
+[ext_resource type="PackedScene" uid="uid://dpt3w53nplre6" path="res://player/Player.tscn" id="2_0hfno"]
+[ext_resource type="PackedScene" uid="uid://h3o8d5tpqtqv" path="res://world.tscn" id="2_1m8ry"]
+
+[node name="Game" type="Node2D"]
+
+[node name="World" parent="." instance=ExtResource("2_1m8ry")]
+scale = Vector2(4, 4)
+
+[node name="Player" parent="." instance=ExtResource("2_0hfno")]
+modulate = Color(1, 1, 1, 1)
+position = Vector2(0, 400)
+scale = Vector2(2.5, 2.5)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(1, 0)
+zoom = Vector2(0.6, 0.6)

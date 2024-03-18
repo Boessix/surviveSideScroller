@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqok3vjdnbse5"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_756i8"]
+[ext_resource type="PackedScene" uid="uid://dpt3w53nplre6" path="res://character.tscn" id="2_8ip1r"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gg0vm"]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_756i8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_gg0vm")
+
+[node name="Character" parent="." instance=ExtResource("2_8ip1r")]
+unique_name_in_owner = true

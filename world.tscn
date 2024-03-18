@@ -1,0 +1,49 @@
+[gd_scene load_steps=12 format=3 uid="uid://h3o8d5tpqtqv"]
+
+[ext_resource type="Texture2D" uid="uid://bocfvfr0ly36s" path="res://assets/SNOWY FOREST/1.png" id="1_jhkek"]
+[ext_resource type="Texture2D" uid="uid://ccqijbri4q0hx" path="res://assets/SNOWY FOREST/2.png" id="2_7i8dr"]
+[ext_resource type="Texture2D" uid="uid://bmfrhvjnq0waw" path="res://assets/SNOWY FOREST/3.png" id="7_m66sd"]
+[ext_resource type="Texture2D" uid="uid://ccvr2gcf8h5hx" path="res://assets/SNOWY FOREST/4.png" id="8_qcb8u"]
+[ext_resource type="Texture2D" uid="uid://dirwp77b1fvks" path="res://assets/SNOWY FOREST/5.png" id="9_o1pma"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lioch"]
+texture = ExtResource("1_jhkek")
+texture_region_size = Vector2i(16, 17)
+0:0/size_in_atlas = Vector2i(24, 30)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k2rnu"]
+texture = ExtResource("2_7i8dr")
+texture_region_size = Vector2i(16, 17)
+0:0/size_in_atlas = Vector2i(24, 25)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o3t2f"]
+texture = ExtResource("7_m66sd")
+0:0/size_in_atlas = Vector2i(16, 8)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n5dkn"]
+texture = ExtResource("8_qcb8u")
+0:0/size_in_atlas = Vector2i(16, 8)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cmcdf"]
+texture = ExtResource("9_o1pma")
+
+[sub_resource type="TileSet" id="TileSet_lg5n2"]
+sources/0 = SubResource("TileSetAtlasSource_lioch")
+sources/1 = SubResource("TileSetAtlasSource_k2rnu")
+sources/2 = SubResource("TileSetAtlasSource_o3t2f")
+sources/3 = SubResource("TileSetAtlasSource_n5dkn")
+sources/4 = SubResource("TileSetAtlasSource_cmcdf")
+
+[node name="World" type="Node2D"]
+
+[node name="Floor" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_lg5n2")
+format = 2
+layer_0/tile_data = PackedInt32Array(-65529, 0, 0, 720923, 2, 0, 720939, 3, 0, 720955, 3, 0, 720971, 3, 0)
+
+[node name="mountains" type="TileMap" parent="."]
+format = 2

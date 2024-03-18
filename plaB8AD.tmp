@@ -1,0 +1,93 @@
+[gd_scene load_steps=14 format=3 uid="uid://bqok3vjdnbse5"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_756i8"]
+[ext_resource type="Texture2D" uid="uid://bpsn7f781geku" path="res://assets/character movement templates/Asset Packs 1-4 (final)/Asset Pack-V1/Player Run/player run 48x48.png" id="1_lo1at"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gg0vm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jjbh4"]
+atlas = ExtResource("1_lo1at")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4uw4b"]
+atlas = ExtResource("1_lo1at")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kh57h"]
+atlas = ExtResource("1_lo1at")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vi365"]
+atlas = ExtResource("1_lo1at")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rdadm"]
+atlas = ExtResource("1_lo1at")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hm8fn"]
+atlas = ExtResource("1_lo1at")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pkpr8"]
+atlas = ExtResource("1_lo1at")
+region = Rect2(288, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2hb4k"]
+atlas = ExtResource("1_lo1at")
+region = Rect2(336, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1jjyf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jjbh4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4uw4b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kh57h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vi365")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rdadm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hm8fn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pkpr8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2hb4k")
+}],
+"loop": true,
+"name": &"running",
+"speed": 15.0
+}]
+
+[sub_resource type="GDScript" id="GDScript_rgew3"]
+script/source = "extends AnimatedSprite2D
+
+func playerRunning():
+	%character.play(\"running\")
+"
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_756i8")
+speed = null
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_gg0vm")
+
+[node name="Character" type="Node2D" parent="."]
+
+[node name="CharacterSprite" type="AnimatedSprite2D" parent="Character"]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_1jjyf")
+animation = &"running"
+frame_progress = 0.920293
+script = SubResource("GDScript_rgew3")
